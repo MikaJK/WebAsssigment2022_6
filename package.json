@@ -4,8 +4,8 @@
   "description": "JavaScript example starter project",
   "main": "index.html",
   "scripts": {
-    "start": "parcel index.html newchart.html --open",
-    "build": "parcel build index.html newchart.html"
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html newchar.html"
   },
   "dependencies": {
     "frappe-charts": "1.6.2",
