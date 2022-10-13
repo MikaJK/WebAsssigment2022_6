@@ -248,5 +248,4 @@ value = localStorage["key"]; */
 function switchWindow() {
   localStorage["test"] = "test";
   window.location.href = "newchart.html";
-  return false;
 }
