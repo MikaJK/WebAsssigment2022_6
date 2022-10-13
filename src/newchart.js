@@ -66,20 +66,20 @@ async function fetchData(query1, query2) {
     fetch(url, {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify(query1)
+      body: JSON.stringify(query2)
     }),
     fetch(url, {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify(query2)
+      body: JSON.stringify(query1)
     })
   ])
     .then((responses) =>
       Promise.all(responses.map((response) => response.json()))
     )
     .then((data) => {
-      leavingArray = data[0];
-      comingArray = data[1];
+      leavingArray = data[1];
+      comingArray = data[0];
     })
     .then((data) => {
       makeChart(comingArray, leavingArray);
