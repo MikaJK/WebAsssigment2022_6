@@ -52,6 +52,9 @@ const jsonQ = {
   }
 };
 
+let leavingArray;
+let comingArray;
+
 function $(x) {
   return document.getElementById(x);
 }
@@ -75,7 +78,11 @@ async function fetchData(query1, query2) {
       Promise.all(responses.map((response) => response.json()))
     )
     .then((data) => {
-      makeChart(data[1], data[0]);
+      leavingArray = data[0];
+      comingArray = data[1];
+    })
+    .then((data) => {
+      makeChart(comingArray, leavingArray);
     })
     .catch((err) => {
       return Promise.reject();
@@ -94,12 +101,12 @@ async function makeChart(data, data2) {
   var test = [];
   var test2 = [];
 
-  vuosi.forEach((value, index) => {
-    test.push(values[index]);
+  values.forEach((value, index) => {
+    test.push(value);
   });
 
-  vuosi2.forEach((value, index) => {
-    test2.push(values2[index]);
+  values2.forEach((value, index) => {
+    test2.push(value);
   });
 
   tiedot[0] = {
