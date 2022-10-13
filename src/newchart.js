@@ -66,12 +66,12 @@ async function fetchData(query1, query2) {
     fetch(url, {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify(query2)
+      body: JSON.stringify(query1)
     }),
     fetch(url, {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify(query1)
+      body: JSON.stringify(query2)
     })
   ])
     .then((responses) =>
