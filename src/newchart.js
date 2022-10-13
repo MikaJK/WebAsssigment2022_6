@@ -124,7 +124,7 @@ async function makeChart(data, data2) {
   };
   console.log(tiedot);
 
-  const chart = new Chart("#second-chart", {
+  const chart = new Chart("#chart", {
     title: "Data chart",
     data: chartData,
     type: "bar",
